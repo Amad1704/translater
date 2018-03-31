@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=1024">
+        
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https://mc.yandex.ru https://twemoji.maxcdn.com https://avatars-fast.yandex.net https://favicon.yandex.net https://avatars.mds.yandex.net https://yastatic.net blob: data: https://*.yandex.net:* https://*.gemius.pl https://yandex.ru https://yandex.ru https://*.yandex.ru https://*.tns-counter.ru; font-src https://*.yandex.net:* https://yastatic.net; child-src blob:; frame-src https://awaps.yandex.ru https://awaps.yandex.net https://yandexadexchange.net https://*.yandexadexchange.net https://*.yandex.ru https://yastatic.net https://z5h64q92x9.net https://*.z5h64q92x9.net:*; media-src data: https://yandex.st https://yastatic.net https://*.yandex.net; style-src 'unsafe-inline' 'unsafe-eval' 'nonce-D0L0FEa0cI' https://yandex.st https://*.yandex.net:* https://yastatic.net; script-src 'self' 'unsafe-eval' 'unsafe-inline' 'nonce-D0L0FEa0cI' https://an.yandex.ru https://yandex.st https://*.yandex.net:* https://mc.yandex.ru https://yastatic.net; connect-src 'self' wss://*.yandex.net https://mc.yandex.ru https://yandex.st https://yastatic.net https://*.yandex.by https://*.yandex.com https://*.yandex.com.tr https://*.yandex.ru https://*.yandex.kz https://*.yandex.ua https://*.yandex.net:*;">
+
+        <link rel="alternate" hreflang="ru" href="https://translate.yandex.ru"/>
+        <link rel="alternate" hreflang="ru-UA" href="https://translate.yandex.ua/?ui=ru"/>
+        <link rel="alternate" hreflang="en" href="https://translate.yandex.com"/>
+        <link rel="alternate" hreflang="tr" href="https://ceviri.yandex.com.tr"/>
+        
+
+        <title> Переводчик </title>
+        <style nonce="noW1LKMYAA">
+            .counter-wrapper {
+                top: 0;
+                left: 0;
+                width: 1px;
+                height: 1px;
+                overflow: hidden;
+                position: absolute;}
+
+            .service-description {
+                color: #4c4c4c;
+                bottom: 0;
+                padding: 11px;
+                overflow: hidden;
+                position: absolute;
+                max-height: 100%;
+                border-top: 24px solid #fff;
+                background: #f6f8f9;
+                line-height: 22px;
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                box-sizing: border-box;}
+
+            .service-description a {color: blue;
+            }
+        </style>
+        
+        <link href="https://yastatic.net/s3/translate/v2.185/css/main.css" rel="stylesheet" type="text/css">
+        <link href="https://yastatic.net/s3/translate/v2.185/css/tr_text.css" rel="stylesheet" type="text/css">
+
+        
+        <script id="urlTemplate" type="text/template">
+            <input type="hidden" name="ui" value="ui">
+            <input type="hidden" name="url" value="url">
+            <input type="hidden" name="lang" value="lang">
+            <span class="page-url" data-action="translatePage">url</span> 
+        </script>
+        
+        <script id="listboxTemplate" type="text/template">
+                <div class="listbox-option listbox-option_checkbox state-selected state-unselectable" data-value="value" unselectable="on"></div>
+        </script>
+
+        <script id="listboxTemplate2" type="text/template"><div class="listbox-column" unselectable="on"></div></script>
+        
+        <script id="langTagsTemplate" type="text/template"><span class="listbox-option-tag listbox-option-tag_new">new</span><span class="listbox-option-tag listbox-option-tag_beta">&beta;</span><span class="listbox-option-tag listbox-option-tag_alpha">&alpha;</span></script>
+        
+        <script id="externalTemplate" type="text/template"><a href="href" class="external-link" data-external-name="name" target="_blank" rel="nofollow"></a></script>
+        
+        <script id="translatorTemplate" type="text/template"><span data-complaint-type="fullTextTranslation" data-complaint-target="true"><span class="translation-chunk" data-align="align"></span><span>&#10;</span></span></script>
+        
+        <script id="dictionaryTemplate" type="text/template">
+            <ul class="tab-content" data-tab="regular">
+                    <li class="dictionary-item">
+                            <div class="dictionary-title">
+                                <span class="dictionary-pos" title="tooltip"></span>
+                                <span class="dictionary-marks"><span class="dictionary-mark" title="title"></span></span>
+                                <span class="dictionary-marks_fl"></span>
+                            </div>
+                    </li>
+                        <ol class="dictionary-meanings">
+                                <li class="dictionary-meanings-item">
+                                    <span class="dictionary-meanings-index"></span>
+                                    <div class="dictionary-meanings-value"><span class="dictionary-meaning" data-complaint-type="tr" data-complaint-target="true" data-value="tr:value" data-title="title" data-part-of-speech="partOfSpeech" data-group-index="groupIndex"></span><span class="dictionary-marks"><span class="dictionary-mark" title="title"></span></span></div>
+                                <div class="dictionary-meanings-trs"><span data-complaint-type="mean" data-complaint-target="true" data-value="mean:value" data-title="title" data-part-of-speech="partOfSpeech" data-group-index="groupIndex"></span></div>
+                                </li>
+                        </ol>
+        </script>
+
+        <link href="https://yastatic.net/s3/translate/v2.185/css/main.css" rel="stylesheet" type="text/css">
+        <link href="https://yastatic.net/s3/translate/v2.185/css/tr_text.css" rel="stylesheet" type="text/css">
+        
+    <body data-text="" data-lang="">
+        <div id="header" title="Переводчик" class="header">
+            </div>
+        </div>
+
+    <div class="main">
+            <div class="spacer" data-resizer-spacer="true"></div>
+            <div class="container container_main" data-resizer-target="true">
+                <div class="item item_left">
+                    <div class="panel">
+                        
+                        <span id="clearButton" role="button" class="button button_icon button_icon_clear" aria-label="Очистить" data-tooltip="Очистить" data-tooltip-position="top"></span>
+
+                        <style>
+                        .button_icon: {
+                            top: 50%;
+                            left: 50%;
+                            width: 20px;
+                            height: 20px;
+                            margin: -10px 0 0 -10px;
+                            content: "";
+                            opacity: .4;
+                            display: block;
+                            position: absolute;
+                            background: url(../img/tr_text.svg);
+                            pointer-events: none;>}
+                        </style>
+
+
+                        <div class="inline-block"></div>
+                        <span id="keyboardButton" role="button" class="button button_icon button_icon_keyboard state-active" aria-label="Экранная клавиатура" data-tooltip="Экранная клавиатура" data-tooltip-position="top"></span>
+                        <style>    
+                        .button_icon: {
+                            top: 50%;
+                            left: 50%;
+                            width: 20px;
+                            height: 20px;
+                            margin: -10px 0 0 -10px;
+                            content: "";
+                            opacity: .4;
+                            display: block;
+                            position: absolute;
+                            background: url(../img/tr_text.svg);
+                            pointer-events: none;
+                        }
+                        .button_icon_keyboard: {
+                           background-position: -220px 0;
+                        }
+                        </style>
+                        </span>
+
+                        <div id="tooltip" class="tooltip state-fadeaway state-unselectable state-hidden" data-position="top" style="top: 62px; right: 352.094px;">Язык исходного текста</div>
+                        <span id="srcLangButton" class="button button_select button_select_source" tabindex="-1" data-tooltip="Язык исходного текста" data-tooltip-position="top">Английский</span>
+
+
+
+                        <style>
+                        .item_left .button_select: {
+                            top: 50%;
+                            left: 10px;
+                            width: 6px;
+                            height: 6px;
+                            content: "";
+                            position: absolute;
+                            margin-top: -3px;
+                            background: #cbcbcb;
+                            border-radius: 50%;
+                        }
+                        .application.state-auto .item_left .button_select: {
+                            background: #070;
+                            background-image: initial;
+                            background-position-x: initial;
+                            background-position-y: initial;
+                            background-size: initial;
+                            background-repeat-x: initial;
+                            background-repeat-y: initial;
+                            background-attachment: initial;
+                            background-origin: initial;
+                            background-clip: initial;
+                            background-color: rgb(0, 119, 0);
+                        </style>
+                        </span>
+                    </div>
+
+                            <div id="textbox" class="textwrapper state-empty">
+                                <canvas id="volume" class="volume state-hidden state-fadeaway" width="120" height="120"></canvas>
+                                <div class="textbox">
+                                    <div id="alignment" class="textinput textlayer textlayer_measurer textlayer_measurer_alignment"></div>
+                                    <div id="interim" class="textinput textlayer textlayer_measurer textlayer_measurer_interim state-unselectable"></div>
+                                    <div id="measurer" class="textinput textlayer textlayer_measurer"></div>
+                                    <div id="textLayer" class="textinput textlayer textlayer_measurer textlayer_measurer_layer textlayer_measurer_textarea"></div>
+                                    <div id="fakeArea" class="fakearea textinput textlayer" tabindex="0" autocorrect="off" autocomplete="off" autocapitalize="off" spellcheck="false" contenteditable="plaintext-only"></div>
+                                </div>
+                            </div>
+                                <style type="text/css">
+                                .state-ellipsis {
+                                    overflow: hidden;
+                                    overflow-x: hidden;
+                                    overflow-y: hidden;
+                                    white-space: nowrap;
+                                    text-overflow: ellipsis;
+                                }
+                                .placeholder {
+                                    top: 10px;
+                                    left: 10px;
+                                    right: 10px;
+                                    color: blue;
+                                    position: absolute;
+                                    font-family: Tahoma;
+                                }
+                                .textlayer, .predictor, .placeholder {
+                                    font: inherit;
+                                    line-height: 1.2;
+                                }
+                                </style>
+                        </div>
+
+
+
+                <div class="item item_right">
+                    <div class="panel">
+                        <span id="dstLangButton" class="button button_select button_select_target" tabindex="-1" data-tooltip="Язык перевода" data-tooltip-position="top">Русский</span>
+                    </div>
+                    <div id="textbox2" class="textwrapper state-hidden">
+                        <div class="message-text"></div>
+                    </div>
+
+        <div id="keyboard" class="keyboard" data-extra="false" data-shifted="false" data-active="true">
+            <div class="keyboard-row">
+
+                    <div class="keyboard-row">
+                        <div role="button" class="keyboard-key" data-keycode="192"></div>
+                        <div role="button" class="keyboard-key" data-keycode="49"></div>
+                        <div role="button" class="keyboard-key" data-keycode="50"></div>
+                        <div role="button" class="keyboard-key" data-keycode="51"></div>
+                        <div role="button" class="keyboard-key" data-keycode="52"></div>
+                        <div role="button" class="keyboard-key" data-keycode="53"></div>
+                        <div role="button" class="keyboard-key" data-keycode="54"></div>
+                        <div role="button" class="keyboard-key" data-keycode="55"></div>
+                        <div role="button" class="keyboard-key" data-keycode="56"></div>
+                        <div role="button" class="keyboard-key" data-keycode="57"></div>
+                        <div role="button" class="keyboard-key" data-keycode="48"></div>
+                        <div role="button" class="keyboard-key" data-keycode="189"></div>
+                        <div role="button" class="keyboard-key" data-keycode="187"></div>
+                        <div role="button" class="keyboard-key" data-keycode="8" data-specialkey="true"></div>
+                    </div>
+                    <div class="keyboard-row">
+                        <div role="button" class="keyboard-key" data-keycode="9" data-specialkey="true"></div>
+                        <div role="button" class="keyboard-key" data-keycode="81"></div>
+                        <div role="button" class="keyboard-key" data-keycode="87"></div>
+                        <div role="button" class="keyboard-key" data-keycode="69"></div>
+                        <div role="button" class="keyboard-key" data-keycode="82"></div>
+                        <div role="button" class="keyboard-key" data-keycode="84"></div>
+                        <div role="button" class="keyboard-key" data-keycode="89"></div>
+                        <div role="button" class="keyboard-key" data-keycode="85"></div>
+                        <div role="button" class="keyboard-key" data-keycode="73"></div>
+                        <div role="button" class="keyboard-key" data-keycode="79"></div>
+                        <div role="button" class="keyboard-key" data-keycode="80"></div>
+                        <div role="button" class="keyboard-key" data-keycode="219"></div>
+                        <div role="button" class="keyboard-key" data-keycode="221"></div>
+                        <div role="button" class="keyboard-key" data-keycode="220"></div>
+                    </div>
+                    <div class="keyboard-row">
+                        <div role="button" class="keyboard-key" data-keycode="20" data-specialkey="true"></div>
+                        <div role="button" class="keyboard-key" data-keycode="65"></div>
+                        <div role="button" class="keyboard-key" data-keycode="83"></div>
+                        <div role="button" class="keyboard-key" data-keycode="68"></div>
+                        <div role="button" class="keyboard-key" data-keycode="70"></div>
+                        <div role="button" class="keyboard-key" data-keycode="71"></div>
+                        <div role="button" class="keyboard-key" data-keycode="72"></div>
+                        <div role="button" class="keyboard-key" data-keycode="74"></div>
+                        <div role="button" class="keyboard-key" data-keycode="75"></div>
+                        <div role="button" class="keyboard-key" data-keycode="76"></div>
+                        <div role="button" class="keyboard-key" data-keycode="186"></div>
+                        <div role="button" class="keyboard-key" data-keycode="222"></div>
+                        <div role="button" class="keyboard-key" data-keycode="13" data-specialkey="true"></div>
+                    </div>
+                    <div class="keyboard-row">
+                        <div role="button" class="keyboard-key" data-keycode="16" data-specialkey="true"></div>
+                        <div role="button" class="keyboard-key" data-keycode="226"></div>
+                        <div role="button" class="keyboard-key" data-keycode="90"></div>
+                        <div role="button" class="keyboard-key" data-keycode="88"></div>
+                        <div role="button" class="keyboard-key" data-keycode="67"></div>
+                        <div role="button" class="keyboard-key" data-keycode="86"></div>
+                        <div role="button" class="keyboard-key" data-keycode="66"></div>
+                        <div role="button" class="keyboard-key" data-keycode="78"></div>
+                        <div role="button" class="keyboard-key" data-keycode="77"></div>
+                        <div role="button" class="keyboard-key" data-keycode="188"></div>
+                        <div role="button" class="keyboard-key" data-keycode="190"></div>
+                        <div role="button" class="keyboard-key" data-keycode="191"></div>
+                        <div role="button" class="keyboard-key" data-keycode="16" data-specialkey="true"></div>
+                    </div>
+                    <div class="keyboard-row">
+                        <div role="button" class="keyboard-key" data-keycode="18" data-specialkey="true"></div>
+                        <div id="keyboardLang" role="button" class="keyboard-key" data-keycode="32" data-specialkey="true"></div>
+                        <div role="button" class="keyboard-key" data-keycode="18" data-specialkey="true"></div>
+                    </div>
+                </div>
+                <div class="close" data-action="closeKeyboard"></div>
+            </div>
+
+                <style>
+                .application.state-keyboard .main {
+                    padding-bottom: 254px;
+                }
+                </style>
+            </div>
+
+
+                    <div id="srcLangListbox" role="listbox" class="listbox listbox_fixed listbox_language listbox_language_source state-hidden state-fadeaway state-unselectable">
+                        <div class="listbox-column listbox-column_extra"></div>
+                        <div id="srcLangListboxContent" class="listbox-column listbox-column_main">
+                    <div class="listbox-column" unselectable="on">
+                <div class="listbox-option state-unselectable" data-value="az" unselectable="on">Азербайджанский</div>
+                <div class="listbox-option state-unselectable" data-value="sq" unselectable="on">Албанский</div>
+                <div class="listbox-option state-unselectable" data-value="en" unselectable="on">Английский</div>
+                <div class="listbox-option state-unselectable" data-value="ar" unselectable="on">Арабский</div>
+                <div class="listbox-option state-unselectable" data-value="hy" unselectable="on">Армянский</div>
+                <div class="listbox-option state-unselectable" data-value="af" unselectable="on">Африкаанс</div>
+                <div class="listbox-option state-unselectable" data-value="eu" unselectable="on">Баскский</div>
+                <div class="listbox-option state-unselectable" data-value="be" unselectable="on">Белорусский</div>
+                <div class="listbox-option state-unselectable" data-value="bn" unselectable="on">Бенгальский</div>
+                <div class="listbox-option state-unselectable" data-value="bg" unselectable="on">Болгарский</div>
+                    </div>
+                <div class="listbox-column" unselectable="on">
+                <div class="listbox-option state-unselectable" data-value="bs" unselectable="on">Боснийский</div>
+                <div class="listbox-option state-unselectable" data-value="cy" unselectable="on">Валлийский</div>
+                <div class="listbox-option state-unselectable" data-value="hu" unselectable="on">Венгерский</div>
+                <div class="listbox-option state-unselectable" data-value="vi" unselectable="on">Вьетнамский</div>
+                <div class="listbox-option state-unselectable" data-value="ht" unselectable="on">Гаитянский</div>
+                <div class="listbox-option state-unselectable" data-value="gl" unselectable="on">Галисийский</div>
+                <div class="listbox-option state-unselectable" data-value="el" unselectable="on">Греческий</div>
+                <div class="listbox-option state-unselectable" data-value="ka" unselectable="on">Грузинский</div>
+                <div class="listbox-option state-unselectable" data-value="da" unselectable="on">Датский</div>
+                <div class="listbox-option state-unselectable" data-value="he" unselectable="on">Иврит</div>
+                    </div>
+                <div class="listbox-column" unselectable="on">
+                <div class="listbox-option state-unselectable" data-value="yi" unselectable="on">Идиш</div>
+                <div class="listbox-option state-unselectable" data-value="id" unselectable="on">Индонезийский</div>
+                <div class="listbox-option state-unselectable" data-value="ga" unselectable="on">Ирландский</div>
+                <div class="listbox-option state-unselectable" data-value="is" unselectable="on">Исландский</div>
+                <div class="listbox-option state-unselectable" data-value="es" unselectable="on">Испанский</div>
+                <div class="listbox-option state-unselectable" data-value="it" unselectable="on">Итальянский</div>
+                <div class="listbox-option state-unselectable" data-value="kk" unselectable="on">Казахский</div>
+                <div class="listbox-option state-unselectable" data-value="ca" unselectable="on">Каталанский</div>
+                <div class="listbox-option state-unselectable" data-value="zh" unselectable="on">Китайский</div>
+                <div class="listbox-option state-unselectable" data-value="ko" unselectable="on">Корейский</div>
+                    </div>
+                <div class="listbox-column" unselectable="on">
+                <div class="listbox-option state-unselectable" data-value="lv" unselectable="on">Латышский</div>
+                <div class="listbox-option state-unselectable" data-value="lt" unselectable="on">Литовский</div>
+                <div class="listbox-option state-unselectable" data-value="lb" unselectable="on">Люксембургский</div>
+                <div class="listbox-option state-unselectable" data-value="mk" unselectable="on">Македонский</div>
+                <div class="listbox-option state-unselectable" data-value="mg" unselectable="on">Малагасийский</div>
+                <div class="listbox-option state-unselectable" data-value="ms" unselectable="on">Малайский</div>
+                <div class="listbox-option state-unselectable" data-value="mt" unselectable="on">Мальтийский</div>
+                <div class="listbox-option state-unselectable" data-value="mi" unselectable="on">Маори</div>
+                <div class="listbox-option state-unselectable" data-value="mr" unselectable="on">Маратхи</div>
+                <div class="listbox-option state-unselectable" data-value="de" unselectable="on">Немецкий</div>
+                    </div>
+                <div class="listbox-column" unselectable="on">
+                <div class="listbox-option state-unselectable" data-value="ne" unselectable="on">Непальский</div>
+                <div class="listbox-option state-unselectable" data-value="nl" unselectable="on">Нидерландский</div>
+                <div class="listbox-option state-unselectable" data-value="no" unselectable="on">Норвежский</div>
+                <div class="listbox-option state-unselectable" data-value="pa" unselectable="on">Панджаби</div>
+                <div class="listbox-option state-unselectable" data-value="fa" unselectable="on">Персидский</div>
+                <div class="listbox-option state-unselectable" data-value="pl" unselectable="on">Польский</div>
+                <div class="listbox-option state-unselectable" data-value="pt" unselectable="on">Португальский</div>
+                <div class="listbox-option state-unselectable" data-value="ro" unselectable="on">Румынский</div>
+                <div class="listbox-option state-unselectable" data-value="ru" unselectable="on">Русский</div>
+                <div class="listbox-option state-unselectable" data-value="ceb" unselectable="on">Себуанский</div>
+                    </div>
+                <div class="listbox-column" unselectable="on">
+                <div class="listbox-option state-unselectable" data-value="sr" unselectable="on">Сербский</div>
+                <div class="listbox-option state-unselectable" data-value="si" unselectable="on">Сингальский</div>
+                <div class="listbox-option state-unselectable" data-value="sk" unselectable="on">Словацкий</div>
+                <div class="listbox-option state-unselectable" data-value="sl" unselectable="on">Словенский</div>
+                <div class="listbox-option state-unselectable" data-value="sw" unselectable="on">Суахили</div>
+                <div class="listbox-option state-unselectable" data-value="th" unselectable="on">Тайский</div>
+                <div class="listbox-option state-unselectable" data-value="tt" unselectable="on">Татарский</div>
+                <div class="listbox-option state-unselectable" data-value="tr" unselectable="on">Турецкий</div>
+                <div class="listbox-option state-unselectable" data-value="uz" unselectable="on">Узбекский</div>
+                <div class="listbox-option state-unselectable" data-value="uk" unselectable="on">Украинский</div>
+                    </div>
+                <div class="listbox-column" unselectable="on">
+                <div class="listbox-option state-unselectable" data-value="ur" unselectable="on">Урду</div>
+                <div class="listbox-option state-unselectable" data-value="fi" unselectable="on">Финский</div>
+                <div class="listbox-option state-unselectable" data-value="fr" unselectable="on">Французский</div>
+                <div class="listbox-option state-unselectable" data-value="hi" unselectable="on">Хинди</div>
+                <div class="listbox-option state-unselectable" data-value="hr" unselectable="on">Хорватский</div>
+                <div class="listbox-option state-unselectable" data-value="cs" unselectable="on">Чешский</div>
+                <div class="listbox-option state-unselectable" data-value="sv" unselectable="on">Шведский</div>
+                <div class="listbox-option state-unselectable" data-value="gd" unselectable="on">Шотландский (гэльский)</div>
+                <div class="listbox-option state-unselectable" data-value="eo" unselectable="on">Эсперанто</div>
+                <div class="listbox-option state-unselectable" data-value="et" unselectable="on">Эстонский</div>       
+                    </div></div>
+
+                    <div id="dstLangListbox" role="listbox" class="listbox listbox_fixed listbox_language listbox_language_target state-fadeaway state-unselectable state-hidden" style="top: 128px; left: 211.047px;">
+                        <div id="dstLangListboxContent" class="listbox-column listbox-column_main">
+                    <div class="listbox-column" unselectable="on">
+                <div class="listbox-option state-unselectable" data-value="az" unselectable="on">Азербайджанский</div>
+                <div class="listbox-option state-unselectable" data-value="sq" unselectable="on">Албанский</div>
+                <div class="listbox-option state-unselectable" data-value="en" unselectable="on">Английский</div>
+                <div class="listbox-option state-unselectable" data-value="ar" unselectable="on">Арабский</div>
+                <div class="listbox-option state-unselectable" data-value="hy" unselectable="on">Армянский</div>
+                <div class="listbox-option state-unselectable" data-value="af" unselectable="on">Африкаанс</div>
+                <div class="listbox-option state-unselectable" data-value="eu" unselectable="on">Баскский</div>
+                <div class="listbox-option state-unselectable" data-value="be" unselectable="on">Белорусский</div>
+                <div class="listbox-option state-unselectable" data-value="bn" unselectable="on">Бенгальский</div>
+                <div class="listbox-option state-unselectable" data-value="bg" unselectable="on">Болгарский</div>
+                    </div>
+                <div class="listbox-column" unselectable="on">
+                <div class="listbox-option state-unselectable" data-value="bs" unselectable="on">Боснийский</div>
+                <div class="listbox-option state-unselectable" data-value="cy" unselectable="on">Валлийский</div>
+                <div class="listbox-option state-unselectable" data-value="hu" unselectable="on">Венгерский</div>
+                <div class="listbox-option state-unselectable" data-value="vi" unselectable="on">Вьетнамский</div>
+                <div class="listbox-option state-unselectable" data-value="ht" unselectable="on">Гаитянский</div>
+                <div class="listbox-option state-unselectable" data-value="gl" unselectable="on">Галисийский</div>
+                <div class="listbox-option state-unselectable" data-value="el" unselectable="on">Греческий</div>
+                <div class="listbox-option state-unselectable" data-value="ka" unselectable="on">Грузинский</div>
+                <div class="listbox-option state-unselectable" data-value="da" unselectable="on">Датский</div>
+                <div class="listbox-option state-unselectable" data-value="he" unselectable="on">Иврит</div>
+                    </div>
+                <div class="listbox-column" unselectable="on">
+                <div class="listbox-option state-unselectable" data-value="yi" unselectable="on">Идиш</div>
+                <div class="listbox-option state-unselectable" data-value="id" unselectable="on">Индонезийский</div>
+                <div class="listbox-option state-unselectable" data-value="ga" unselectable="on">Ирландский</div>
+                <div class="listbox-option state-unselectable" data-value="is" unselectable="on">Исландский</div>
+                <div class="listbox-option state-unselectable" data-value="es" unselectable="on">Испанский</div>
+                <div class="listbox-option state-unselectable" data-value="it" unselectable="on">Итальянский</div>
+                <div class="listbox-option state-unselectable" data-value="kk" unselectable="on">Казахский</div>
+                <div class="listbox-option state-unselectable" data-value="ca" unselectable="on">Каталанский</div>
+                <div class="listbox-option state-unselectable" data-value="zh" unselectable="on">Китайский</div>
+                <div class="listbox-option state-unselectable" data-value="ko" unselectable="on">Корейский</div>
+                    </div>
+                <div class="listbox-column" unselectable="on">
+                <div class="listbox-option state-unselectable" data-value="lv" unselectable="on">Латышский</div>
+                <div class="listbox-option state-unselectable" data-value="lt" unselectable="on">Литовский</div>
+                <div class="listbox-option state-unselectable" data-value="lb" unselectable="on">Люксембургский</div>
+                <div class="listbox-option state-unselectable" data-value="mk" unselectable="on">Македонский</div>
+                <div class="listbox-option state-unselectable" data-value="mg" unselectable="on">Малагасийский</div>
+                <div class="listbox-option state-unselectable" data-value="ms" unselectable="on">Малайский</div>
+                <div class="listbox-option state-unselectable" data-value="mt" unselectable="on">Мальтийский</div>
+                <div class="listbox-option state-unselectable" data-value="mi" unselectable="on">Маори</div>
+                <div class="listbox-option state-unselectable" data-value="mr" unselectable="on">Маратхи</div>
+                <div class="listbox-option state-unselectable" data-value="de" unselectable="on">Немецкий</div>
+                    </div>
+                <div class="listbox-column" unselectable="on">
+                <div class="listbox-option state-unselectable" data-value="ne" unselectable="on">Непальский</div>
+                <div class="listbox-option state-unselectable" data-value="nl" unselectable="on">Нидерландский</div>
+                <div class="listbox-option state-unselectable" data-value="no" unselectable="on">Норвежский</div>
+                <div class="listbox-option state-unselectable" data-value="pa" unselectable="on">Панджаби</div>
+                <div class="listbox-option state-unselectable" data-value="fa" unselectable="on">Персидский</div>
+                <div class="listbox-option state-unselectable" data-value="pl" unselectable="on">Польский</div>
+                <div class="listbox-option state-unselectable" data-value="pt" unselectable="on">Португальский</div>
+                <div class="listbox-option state-unselectable" data-value="ro" unselectable="on">Румынский</div>
+                <div class="listbox-option state-unselectable" data-value="ru" unselectable="on">Русский</div>
+                <div class="listbox-option state-unselectable" data-value="ceb" unselectable="on">Себуанский</div>
+                    </div>
+                <div class="listbox-column" unselectable="on">
+                <div class="listbox-option state-unselectable" data-value="sr" unselectable="on">Сербский</div>
+                <div class="listbox-option state-unselectable" data-value="si" unselectable="on">Сингальский</div>
+                <div class="listbox-option state-unselectable" data-value="sk" unselectable="on">Словацкий</div>
+                <div class="listbox-option state-unselectable" data-value="sl" unselectable="on">Словенский</div>
+                <div class="listbox-option state-unselectable" data-value="sw" unselectable="on">Суахили</div>
+                <div class="listbox-option state-unselectable" data-value="th" unselectable="on">Тайский</div>
+                <div class="listbox-option state-unselectable" data-value="tt" unselectable="on">Татарский</div>
+                <div class="listbox-option state-unselectable" data-value="tr" unselectable="on">Турецкий</div>
+                <div class="listbox-option state-unselectable" data-value="uz" unselectable="on">Узбекский</div>
+                <div class="listbox-option state-unselectable" data-value="uk" unselectable="on">Украинский</div>
+                    </div>
+                <div class="listbox-column" unselectable="on">
+                <div class="listbox-option state-unselectable" data-value="ur" unselectable="on">Урду</div>
+                <div class="listbox-option state-unselectable" data-value="fi" unselectable="on">Финский</div>
+                <div class="listbox-option state-unselectable" data-value="fr" unselectable="on">Французский</div>
+                <div class="listbox-option state-unselectable" data-value="hi" unselectable="on">Хинди</div>
+                <div class="listbox-option state-unselectable" data-value="hr" unselectable="on">Хорватский</div>
+                <div class="listbox-option state-unselectable" data-value="cs" unselectable="on">Чешский</div>
+                <div class="listbox-option state-unselectable" data-value="sv" unselectable="on">Шведский</div>
+                <div class="listbox-option state-unselectable" data-value="gd" unselectable="on">Шотландский (гэльский)</div>
+                <div class="listbox-option state-unselectable" data-value="eo" unselectable="on">Эсперанто</div>
+                <div class="listbox-option state-unselectable" data-value="et" unselectable="on">Эстонский</div>
+                    </div></div>
+
+                    <div id="translationLayer" class="textinput textlayer textlayer_measurer textlayer_measurer_layer textlayer_measurer_translation"></div>
+                    <pre id="translation" class="textinput textlayer translation state-fadeaway" tabindex="1"></pre>
+
+                        <div class="spinner overlay overlay_white state-fadeaway">
+                            <form id="urlForm" class="url-form textinput textlayer state-hidden state-fadeaway" method="post" action="/translate"></form>
+                        </div>
+                    </div>
+                </div>
+                <div role="button" class="button button_icon button_icon_swap" data-tooltip="Переключить направление" data-tooltip-position="top" data-action="swapDirection" data-tracker-goal="LANGSELECT_FLIP"></div>
+                
+                <div id="resizer" class="button button_icon button_icon_resizer"></div>
+            </div>
+            <div class="container container_rubber">
+                <style>
+                    .container_rubber: {
+                    clear: left;
+                    content: "";
+                    display: block;
+                }
+                element.style {
+                }
+                .item_left {
+                    left: 0;
+                    padding-right: 18px;
+                }
+                .item {
+                    top: 0;
+                    width: 50%;
+                    height: 100%;
+                    position: absolute;
+                    box-sizing: border-box;
+                }
+                * {
+                    border: 0;
+                    margin: 0;
+                    outline: 0;
+                    padding: 0;
+                    border-radius: 0;
+                    -webkit-tap-highlight-color: transparent;
+                }
+                element.style {
+                }
+                .item_right {
+                    right: 0;
+                    padding-left: 18px;
+                }
+                .item {
+                    top: 0;
+                    width: 50%;
+                    height: 100%;
+                    position: absolute;
+                    box-sizing: border-box;
+                }
+                * {
+                    border: 0;
+                    margin: 0;
+                    outline: 0;
+                    padding: 0;
+                    border-radius: 0;
+                    -webkit-tap-highlight-color: transparent;
+                }
+                </style>
+
+                <div class="item item_left">
+                    <div id="synonyms" class="synonyms dictionary-block state-hidden state-fadeaway">
+                        <div class="item-title">
+                            <div id="synonymsTabs" class="listbox listbox_tabs"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item item_right">
+                    <div id="dictionary" class="dictionary dictionary-block state-hidden state-fadeaway" data-tooltip-nohide="true">
+                        <div class="item-title">
+                            <div id="dictionaryTabs" class="listbox listbox_tabs"></div>
+                        </div>
+                        <div id="dictionaryContent" class="dictionary-list"></div>
+                    </div>
+                </div>
+
+
+
+
+
+
+    </body>
+</html>

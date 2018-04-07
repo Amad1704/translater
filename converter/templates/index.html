@@ -1,4 +1,4 @@
-{% load static %}
+{% load staticfiles %}
 <html>
     <head>
         <meta charset="UTF-8">
@@ -62,8 +62,6 @@
                 <div class="item item_left">
                     <div class="panel">
                     <span id="clearButton" role="button" class="button button_icon button_icon_clear" data-toggle="tooltip" data-placement="bottom" title="Очистить"></span>
-                    <span id="keyboardButton" role="button" class="button button_icon button_icon_keyboard" data-toggle="tooltip" data-placement="bottom" title="Экранная клавиатура"></span>
-                    <span class="dropdown"></span>
                     <button class="btn btn-light btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" tabindex="-1" data-toggle="tooltip" data-placement="bottom" title="Язык исходного текста">
                         <b>Язык исходного текста</b>
                     </button>
@@ -143,17 +141,29 @@
                     </span>
                 </div>
 
-                        <div id="textbox" class="textwrapper state-empty">
+                        <div id="textbox" class="textwrapper state-empty" >
+                            <style>
+                            .textwrapper {
+                                border: 2px solid darkgrey;
+                                position: relative;
+                                width: 550px; 
+                                height: 200px;
+                                resize: none; 
+                            }
+                            </style>
                             <div id="alignment" class="textinput textlayer textlayer_measurer textlayer_measurer_alignment"></div>
                             <div class="textbox">
                                 <div id="alignment" class="textinput textlayer textlayer_measurer textlayer_measurer_alignment"></div>
                                 <div id="measurer" class="textinput textlayer textlayer_measurer"></div>
-                                <div id="textLayer" class="textinput textlayer textlayer_measurer textlayer_measurer_layer textlayer_measurer_textarea"><span class="measurer-text measurer-text_main" data-measurer-target="true"></span><span class="measurer-text measurer-text_dot">.</span></div>
-                                <div id="fakeArea" class="fakearea textinput textlayer" tabindex="0" autocorrect="off" autocomplete="off" autocapitalize="off" spellcheck="false" contenteditable="plaintext-only"></div>
-                                <div style="font-family: Tahoma; font-size: 12px; color: black; padding-left: 7px; margin-top: -1px"><h8>Enter text for translation: </h8></div>
-                                <form method="POST" class="post-form">{% csrf_token %}
-                                    <p>{{ form.text }}</p>
-                                </form>
+                                <div id="fakeArea" class="fakearea textinput textlayer" tabindex="0" contenteditable="plaintext-only"></div>
+                                
+                            <div class="container">
+                            <form action="/" method="post">
+                            {% csrf_token %}
+                            <p><textarea class="form-control" placeholder="Comment" name="text" style="font-family: Tahoma; font-size: 15px; color: black; width: 515px; height: 70px; margin-top: 8px; resize: none"></textarea></p>{{ text }}
+                            <p><input class="btn btn-light btn-lg btn-block" type="submit" style="padding: -10px; margin-top: 7px; font-family: Tahoma; font-size: 15px; line-height: 0.4;"></p>
+                            </form>
+                            </div>
                                 <div id="interim" class="textinput textlayer textlayer_measurer textlayer_measurer_interim state-unselectable"></div>
                             </div>
                         </div>
@@ -161,7 +171,6 @@
 
                 <div class="item item_right">
                     <div class="panel">
-                        <span class="dropdown"></span>
                           <button class="btn btn-light btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" tabindex="-1" data-toggle="tooltip" data-placement="bottom" title="Язык перевода">
                         <b>Язык перевода</b>
                     </button>

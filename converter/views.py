@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.utils.http import urlquote
 import requests
 from .forms import TextFieldForm
 

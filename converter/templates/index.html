@@ -5,63 +5,35 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=1024">
 
+
         <title> Переводчик </title>
         
         <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
         <link rel="stylesheet" href="{% static 'fontawesome/css/font-awesome.min.css' %}">
+        
+        <link rel="stylesheet" href="{% static 'css/tr_text.css' %}">
+        <link href="{% static 'js/extra.js' %}"></link>
+        <link href="{% static 'js/tr_text.js' %}"></link>
+        <link href="{% static 'js/main.js' %}"></link>
+
         <link href="https://yastatic.net/s3/translate/v2.185/css/main.css" rel="stylesheet" type="text/css">
         <link href="https://yastatic.net/s3/translate/v2.185/css/tr_text.css" rel="stylesheet" type="text/css">
 
-        
-        <script id="urlTemplate" type="text/template">
-            <input type="hidden" name="ui" value="ui">
-            <input type="hidden" name="url" value="url">
-            <input type="hidden" name="lang" value="lang">
-            <span class="page-url" data-action="translatePage">url</span> 
-        </script>
+
         
         <script id="listboxTemplate" type="text/template">
-                <div class="listbox-option listbox-option_checkbox state-selected state-unselectable" data-value="value" unselectable="on"></div>
+        <div class="listbox-option listbox-option_checkbox state-selected state-unselectable" data-value="value" unselectable="on"></div>
         </script>
-
         <script id="listboxTemplate2" type="text/template"><div class="listbox-column" unselectable="on"></div></script>
-        
         <script id="langTagsTemplate" type="text/template"><span class="listbox-option-tag listbox-option-tag_new">new</span><span class="listbox-option-tag listbox-option-tag_beta">&beta;</span><span class="listbox-option-tag listbox-option-tag_alpha">&alpha;</span></script>
-        
-        <script id="externalTemplate" type="text/template"><a href="href" class="external-link" data-external-name="name" target="_blank" rel="nofollow"></a></script>
-        
-        <script id="translatorTemplate" type="text/template"><span data-complaint-type="fullTextTranslation" data-complaint-target="true"><span class="translation-chunk" data-align="align"></span><span>&#10;</span></span></script>
-        
-        <script id="dictionaryTemplate" type="text/template">
-            <ul class="tab-content" data-tab="regular">
-                    <li class="dictionary-item">
-                            <div class="dictionary-title">
-                                <span class="dictionary-pos" title="tooltip"></span>
-                                <span class="dictionary-marks"><span class="dictionary-mark" title="title"></span></span>
-                                <span class="dictionary-marks_fl"></span>
-                            </div>
-                    </li></ul>
-                        <ol class="dictionary-meanings">
-                                <li class="dictionary-meanings-item">
-                                    <span class="dictionary-meanings-index"></span>
-                                    <div class="dictionary-meanings-value"><span class="dictionary-meaning" data-complaint-type="tr" data-complaint-target="true" data-value="tr:value" data-title="title" data-part-of-speech="partOfSpeech" data-group-index="groupIndex"></span><span class="dictionary-marks"><span class="dictionary-mark" title="title"></span></span></div>
-                                <div class="dictionary-meanings-trs"><span data-complaint-type="mean" data-complaint-target="true" data-value="mean:value" data-title="title" data-part-of-speech="partOfSpeech" data-group-index="groupIndex"></span></div>
-                                </li>
-                        </ol>
-        </script>
-
-        <link href="https://yastatic.net/s3/translate/v2.185/css/main.css" rel="stylesheet" type="text/css">
-        <link href="https://yastatic.net/s3/translate/v2.185/css/tr_text.css" rel="stylesheet" type="text/css">
         
     <body> 
         <div id="header" class="header" style="font-family: Tahoma; color: black;"><h3><b><a>Tr@nsl@tor</a></h3></b></div>
         
     <div class="main">
-            <div class="spacer" data-resizer-spacer="true"></div>
-            <div class="container container_main" data-resizer-target="true">
+            <div class="container container_main">
                 <div class="item item_left">
                     <div class="panel">
-                    <span id="clearButton" role="button" class="button button_icon button_icon_clear" data-toggle="tooltip" data-placement="bottom" title="Очистить"></span>
                     <button class="btn btn-light btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" tabindex="-1" data-toggle="tooltip" data-placement="bottom" title="Язык исходного текста">
                         <b>Язык исходного текста</b>
                     </button>
@@ -141,33 +113,28 @@
                     </span>
                 </div>
 
-                        <div id="textbox" class="textwrapper state-empty" >
-                            <style>
-                            .textwrapper {
-                                border: 2px solid darkgrey;
-                                position: relative;
-                                width: 550px; 
-                                height: 200px;
-                                resize: none; 
-                            }
-                            </style>
-                            <div id="alignment" class="textinput textlayer textlayer_measurer textlayer_measurer_alignment"></div>
-                            <div class="textbox">
-                                <div id="alignment" class="textinput textlayer textlayer_measurer textlayer_measurer_alignment"></div>
-                                <div id="measurer" class="textinput textlayer textlayer_measurer"></div>
-                                <div id="fakeArea" class="fakearea textinput textlayer" tabindex="0" contenteditable="plaintext-only"></div>
-                                
-                            <div class="container">
-                            <form action="/" method="post">
-                            {% csrf_token %}
-                            <p><textarea class="form-control" placeholder="Comment" name="text" style="font-family: Tahoma; font-size: 15px; color: black; width: 515px; height: 70px; margin-top: 8px; resize: none"></textarea></p>{{ text }}
-                            <p><input class="btn btn-light btn-lg btn-block" type="submit" style="padding: -10px; margin-top: 7px; font-family: Tahoma; font-size: 15px; line-height: 0.4;"></p>
-                            </form>
-                            </div>
-                                <div id="interim" class="textinput textlayer textlayer_measurer textlayer_measurer_interim state-unselectable"></div>
-                            </div>
-                        </div>
+                <div id="textbox" class="textwrapper state-empty" >
+                    <style>
+                    .textwrapper {
+                        border: 2px solid darkgrey;
+                        position: relative;
+                        width: 550px; 
+                        height: 200px;
+                        resize: none; 
+                    }
+                    </style>
+
+                    <div class="textbox">
+                    <div class="container">
+                    <form action="/" method="post">
+                    {% csrf_token %}
+                    <p><textarea class="form-control" placeholder="" name="text" style="font-family: Tahoma; font-size: 15px; color: black; width: 515px; height: 70px; margin-top: 8px; resize: none"></textarea></p>
+                    <p><input class="btn btn-light btn-lg btn-block" type="submit" style="padding: -10px; margin-top: 7px; font-family: Tahoma; font-size: 15px; line-height: 0.4;"></p>
+                    </form>
                     </div>
+                    </div>
+                </div>
+            </div>
 
                 <div class="item item_right">
                     <div class="panel">
@@ -249,57 +216,26 @@
                     </style>
                     </span>
                 </div>
-                    <div id="textbox2" class="textwrapper state-hidden">
-                        <div class="message-text"></div>
+                    <div id="textbox2" class="textwrapper">
+                    <div class="container">
+                    <p><textarea class="form-control" placeholder="" name="text" style="font-family: Tahoma; font-size: 15px; color: black; width: 515px; height: 70px; margin-top: 8px; resize: none">{{ text }}</textarea></p>
+                    </div>
                     </div>
                 </div>
-
-                <div role="button" class="button button_icon button_icon_swap" data-toggle="tooltip" data-placement="bottom" title="Переключить направление" data-action="swapDirection" data-tracker-goal="LANGSELECT_FLIP"></div>
-                    <style>          
-                    .button_icon_swap {
-                        top: -25%;
-                        height: 90px;
-                    }
-                    .button_icon_swap, .button_icon_resizer {
-                        left: 50%;
-                        width: 36px;
-                        padding: 0;
-                        position: absolute;
-                        margin-left: -18px;
-                        border-radius: 0;
-                    }
-                    .button_icon {
-                        overflow: visible;
-                    }
-                    </style>
             </div>
             
-            <div class="container container_rubber"></div>
-
-                <div class="item item_left">
-                    <div id="synonyms" class="synonyms dictionary-block state-hidden state-fadeaway">
-                        <div class="item-title">
-                            <div id="synonymsTabs" class="listbox listbox_tabs"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item item_right">
-                    <div id="dictionary" class="dictionary dictionary-block state-hidden state-fadeaway" data-tooltip-nohide="true">
-                        <div class="item-title">
-                            <div id="dictionaryTabs" class="listbox listbox_tabs"></div>
-                        </div>
-                        <div id="dictionaryContent" class="dictionary-list"></div>
-                    </div>
-                </div>
 
         <script src="{% static 'bootstrap/js/jquery.min.js' %}"></script>
         <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+        <script src="{% static 'js/main.js' %}"></script>
+        <script src="{% static 'js/tr_text.js' %}"></script>
+        <script src="{% static 'js/extra.js' %}"></script>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="static/js/bootstrap.min.js"></script>
     </body>
 </html>
-
-

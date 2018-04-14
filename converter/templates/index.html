@@ -126,11 +126,11 @@
 
                     <div class="textbox">
                     <div class="container">
-                    <form action="/" method="post">
+
                     {% csrf_token %}
-                    <p><textarea class="form-control" placeholder="" name="text" style="font-family: Tahoma; font-size: 15px; color: black; width: 515px; height: 70px; margin-top: 8px; resize: none"></textarea></p>
-                    <p><input class="btn btn-light btn-lg btn-block" type="submit" style="padding: -10px; margin-top: 7px; font-family: Tahoma; font-size: 15px; line-height: 0.4;"></p>
-                    </form>
+                    <p><textarea id="inputter" class="form-control" placeholder="" name="text" style="font-family: Tahoma; font-size: 15px; color: black; width: 515px; height: 70px; margin-top: 8px; resize: none"></textarea></p>
+                    <p><input id="send_button" class="btn btn-light btn-lg btn-block" type="submit" style="padding: -10px; margin-top: 7px; font-family: Tahoma; font-size: 15px; line-height: 0.4;"></p>
+
                     </div>
                     </div>
                 </div>
@@ -223,7 +223,30 @@
                     </div>
                 </div>
             </div>
-            
+            <script language="JavaScript">
+
+                    function httpGetAsync(theUrl, callback) {
+                        var xmlHttp = new XMLHttpRequest();
+                        xmlHttp.onreadystatechange = function() {
+                            if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+                                callback(xmlHttp.responseText);
+                        };
+                        xmlHttp.open("GET", theUrl, true); // true for asynchronous
+
+                        xmlHttp.send(null);
+                    }
+
+                    var button=document.querySelector("#send_button");
+                    button.addEventListener("click", function (){
+                        var source_text=document.querySelector("#inputter").value
+                        var url="/api/?text="+source_text;
+                        httpGetAsync(url, function (res) {
+                            console.log(res);
+                        });
+                        console.log(source_text);
+                    })
+
+            </script>
 
         <script src="{% static 'bootstrap/js/jquery.min.js' %}"></script>
         <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>

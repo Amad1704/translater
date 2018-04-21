@@ -2,12 +2,12 @@ from django.shortcuts import render
 from django.utils.http import urlquote
 import requests
 from .forms import TextFieldForm
+from django.http import JsonResponse
 
 
 KEY = "trnsl.1.1.20180323T190702Z.6f17dac41b4158a7.b49e8ad2094d112c0005087f1553da919ceec82b"
 
 lang_list = "en,de,sv,az,sq,ba,be,bg,bs,cy,hu,nl,el,da,ga,is,es,lv,lt,et,cs,hr,fr,fi,uk,tr,sl,sr,sk,ru,ro,pt,pl,no,it"
-
 
 
 def detect_lang(text):
@@ -21,7 +21,6 @@ def detect_lang(text):
         return result.json().get("lang")
     else:
         print("Out of service!")
-
 
 
 def translate(source_lang, target_lang, text):
@@ -46,3 +45,12 @@ def index(request):
     else:
         form = TextFieldForm()
         return render(request, "index.html", {})
+
+def api(request):
+    source_text = request.GET.get('text')
+    source_lang = request.GET.get('source_lang', 'en')
+    target_lang = request.GET.get('target_lang', 'ru')
+    result_text = translate(source_lang, target_lang, source_text)
+    print(result_text.get("text")[0])
+    return JsonResponse({"status": "okey", "answer": result_text.get('text')[0], "target_lang": target_lang})
+

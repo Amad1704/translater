@@ -2,7 +2,6 @@ from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 import logging
 import requests
 from yandex import Translater
-import random
 
 
 logging.basicConfig(format="%(name)s - %(levelname)s - %(message)s",
@@ -32,7 +31,7 @@ def detect_lang(text):
 
 def translate(source_lang, target_lang, text):
     URL = "https://translate.yandex.net/api/v1.5/tr.json/translate?key={KEY}&text={text}&lang={source_lang}-{target_lang}&format=plain"
-    translation = URL.format(KEY=KEY, text=text, source_lang=source_lang, target_lang=target_lang, encoding='utf-8')
+    translation = URL.format(KEY=KEY, text=text, source_lang=source_lang, target_lang=target_lang)
     print(translation)
     result = requests.get(translation)
     print(result.text)
@@ -49,30 +48,6 @@ def translation(bot, update):
     result_text = translate(result_lang, "ru", source_text)
     print(result_text)
     update.message.reply_text(result_text.get("text")[0])
-
-
-languages = []
-languages.append(lang_list)
-print(languages)
-
-
-def run(bot, update):
-    for lang in languages:
-        languages.sort()
-        source_lang = random.choice(languages)
-        print(source_lang)
-        languages.sort(reverse=True)
-        print(languages)
-        target_lang = random.choice(languages)
-        print(target_lang)
-        active = True
-        x = 0
-        while x < 1 and active:
-            x += 1
-            new_result = translate(source_lang, target_lang, result_text.get("text")[0])
-            print(new_result)
-            print(new_result.get("text")[0])
-            update.message.reply_text(new_result.get("text")[0])
 
 
 def main():

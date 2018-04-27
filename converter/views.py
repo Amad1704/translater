@@ -3,6 +3,8 @@ from django.utils.http import urlquote
 import requests
 from .forms import TextFieldForm
 from django.http import JsonResponse
+from .models import Post
+from django.utils import timezone
 
 
 KEY = "trnsl.1.1.20180323T190702Z.6f17dac41b4158a7.b49e8ad2094d112c0005087f1553da919ceec82b"
@@ -46,6 +48,7 @@ def index(request):
         form = TextFieldForm()
         return render(request, "index.html", {})
 
+
 def api(request):
     source_text = request.GET.get('text')
     source_lang = request.GET.get('source_lang', 'en')
@@ -54,3 +57,7 @@ def api(request):
     print(result_text.get("text")[0])
     return JsonResponse({"status": "okey", "answer": result_text.get('text')[0], "target_lang": target_lang})
 
+
+def post_list(request):
+    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+    return render(request, 'converter/post_list.html', {'posts': posts})

@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.utils.http import urlquote
 import requests
 from .forms import TextFieldForm
@@ -43,10 +43,10 @@ def index(request):
         result_text = translate(result_lang, "ru", text)
         print(result_text)
         print(result_text.get("text")[0])
-        return render(request, "index.html", {"text": result_text.get("text")[0]})
+        return render(request, "converter/index.html", {"text": result_text.get("text")[0]})
     else:
         form = TextFieldForm()
-        return render(request, "index.html", {})
+        return render(request, "converter/index.html", {})
 
 
 def api(request):
@@ -61,3 +61,19 @@ def api(request):
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
     return render(request, 'converter/post_list.html', {'posts': posts})
+
+def post_detail(request, pk):
+    post = get_object_or_404(Post, pk=pk)
+    return render(request, 'converter/post_detail.html', {'post': post})
+
+def bad_translator(request):
+    if request.method == "POST":
+        text = request.POST["text"]
+
+        # Здесь функция плохого переводчика из draft.py
+        return render(request, 'converter/bad_translation.html', {'form':form})
+    else:
+        form = TextFieldForm()
+        return JsonResponse({"status": "okey"})
+
+

@@ -5,6 +5,6 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'', include('converter.urls')),
-    url(r'^$', index),
+    url(r'^post/good/translator/$', index),
     url(r'api/translate/$', api)
 ]

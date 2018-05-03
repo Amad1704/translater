@@ -1,0 +1,280 @@
+{% extends 'converter/base.html' %}
+{% load staticfiles %}
+{% block content %}
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=1024">
+
+        <link href="https://yastatic.net/s3/translate/v2.185/css/main.css" rel="stylesheet" type="text/css">
+        <link href="https://yastatic.net/s3/translate/v2.185/css/tr_text.css" rel="stylesheet" type="text/css">
+
+        
+        <script id="listboxTemplate" type="text/template">
+        <div class="listbox-option listbox-option_checkbox state-selected state-unselectable" data-value="value" unselectable="on"></div>
+        </script>
+        <script id="listboxTemplate2" type="text/template"><div class="listbox-column" unselectable="on"></div></script>
+        <script id="langTagsTemplate" type="text/template"><span class="listbox-option-tag listbox-option-tag_new">new</span><span class="listbox-option-tag listbox-option-tag_beta">&beta;</span><span class="listbox-option-tag listbox-option-tag_alpha">&alpha;</span></script>
+    </head>
+    
+    <body> 
+        <div id="header" class="header"><h2><a> Good Tr@nsl@tor </a></h2></div>
+        
+    <div class="main">
+            <div class="container container_main">
+                <div class="item item_left">
+                    <div class="panel" style=" margin-left: 10px; margin-right: 10px;">
+                    <button class="btn btn-light btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" tabindex="-1" data-toggle="tooltip" data-placement="bottom" title="Язык исходного текста">
+                        <h8 id="src_lang" style="font-size: 12px;">Язык исходного текста (Английский)</h8>
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" class="dropdown-menu show" aria-labelledby="dropdownMenuButton" x-placement="top-start" id="srcLangListboxContent" class="listbox-column listbox-column_main" style="transform: translate3d(70px, -131px, 0px); width: 10% top: 100px; left: 50px; will-change: transform;">
+                        <div class="listbox-column" unselectable="on">
+                        <a class="dropdown-item" id="select_source_lang" href="#"><div class="listbox-option state-unselectable" data-value="az" unselectable="on">Азербайджанский</div></a>
+                        <a class="dropdown-item" id="select_source_lang" href="#"><div class="listbox-option state-unselectable" data-value="sq" unselectable="on">Албанский</div></a>
+                        <a class="dropdown-item" id="select_source_lang" href="#"><div class="listbox-option state-unselectable" data-value="en" unselectable="on">Английский</div></a>
+                        <a class="dropdown-item" id="select_source_lang" href="#"><div class="listbox-option state-unselectable" data-value="af" unselectable="on">Африкаанс</div></a>
+                        <a class="dropdown-item" id="select_source_lang" href="#"><div class="listbox-option state-unselectable" data-value="ba" unselectable="on">Башкирский</div></a>
+                        <a class="dropdown-item" id="select_source_lang" href="#"><div class="listbox-option state-unselectable" data-value="be" unselectable="on">Белорусский</div></a>
+                        <a class="dropdown-item" id="select_source_lang" href="#"><div class="listbox-option state-unselectable" data-value="bg" unselectable="on">Болгарский</div></a>
+                        <a class="dropdown-item" id="select_source_lang" href="#"><div class="listbox-option state-unselectable" data-value="bs" unselectable="on">Боснийский</div></a>
+                        <a class="dropdown-item" id="select_source_lang" href="#"><div class="listbox-option state-unselectable" data-value="cy" unselectable="on">Валлийский</div></a></div>
+                        <div class="listbox-column" unselectable="on">
+                        <a class="dropdown-item" id="select_source_lang" href="#"><div class="listbox-option state-unselectable" data-value="hu" unselectable="on">Венгерский</div></a>
+                        <a class="dropdown-item" id="select_source_lang" href="#"><div class="listbox-option state-unselectable" data-value="el" unselectable="on">Греческий</div></a>
+                        <a class="dropdown-item" id="select_source_lang" href="#"><div class="listbox-option state-unselectable" data-value="da" unselectable="on">Датский</div></a>
+                        <a class="dropdown-item" id="select_source_lang" href="#"><div class="listbox-option state-unselectable" data-value="ga" unselectable="on">Ирландский</div></a>
+                        <a class="dropdown-item" id="select_source_lang" href="#"><div class="listbox-option state-unselectable" data-value="is" unselectable="on">Исландский</div></a>
+                        <a class="dropdown-item" id="select_source_lang" href="#"><div class="listbox-option state-unselectable" data-value="es" unselectable="on">Испанский</div></a>
+                        <a class="dropdown-item" id="select_source_lang" href="#"><div class="listbox-option state-unselectable" data-value="it" unselectable="on">Итальянский</div></a>
+                        <a class="dropdown-item" id="select_source_lang" href="#"><div class="listbox-option state-unselectable" data-value="lv" unselectable="on">Латышский</div></a>
+                        <a class="dropdown-item" id="select_source_lang" href="#"><div class="listbox-option state-unselectable" data-value="lt" unselectable="on">Литовский</div></a></div>
+                        <div class="listbox-column" unselectable="on">
+                        <a class="dropdown-item" id="select_source_lang" href="#"><div class="listbox-option state-unselectable" data-value="de" unselectable="on">Немецкий</div></a>
+                        <a class="dropdown-item" id="select_source_lang" href="#"><div class="listbox-option state-unselectable" data-value="nl" unselectable="on">Нидерландский</div></a>
+                        <a class="dropdown-item" id="select_source_lang" href="#"><div class="listbox-option state-unselectable" data-value="no" unselectable="on">Норвежский</div></a>
+                        <a class="dropdown-item" id="select_source_lang" href="#"><div class="listbox-option state-unselectable" data-value="pl" unselectable="on">Польский</div></a>
+                        <a class="dropdown-item" id="select_source_lang" href="#"><div class="listbox-option state-unselectable" data-value="pt" unselectable="on">Португальский</div></a>
+                        <a class="dropdown-item" id="select_source_lang" href="#"><div class="listbox-option state-unselectable" data-value="ro" unselectable="on">Румынский</div></a>
+                        <a class="dropdown-item" id="select_source_lang" href="#"><div class="listbox-option state-unselectable" data-value="ru" unselectable="on">Русский</div></a>
+                        <a class="dropdown-item" id="select_source_lang" href="#"><div class="listbox-option state-unselectable" data-value="sr" unselectable="on">Сербский</div></a>
+                        <a class="dropdown-item" id="select_source_lang" href="#"><div class="listbox-option state-unselectable" data-value="sk" unselectable="on">Словацкий</div></a></div>
+                        <div class="listbox-column" unselectable="on">
+                        <a class="dropdown-item" id="select_source_lang" href="#"><div class="listbox-option state-unselectable" data-value="sl" unselectable="on">Словенский</div></a>
+                        <a class="dropdown-item" id="select_source_lang" href="#"><div class="listbox-option state-unselectable" data-value="tr" unselectable="on">Турецкий</div></a>
+                        <a class="dropdown-item" id="select_source_lang" href="#"><div class="listbox-option state-unselectable" data-value="uk" unselectable="on">Украинский</div></a>
+                        <a class="dropdown-item" id="select_source_lang" href="#"><div class="listbox-option state-unselectable" data-value="fi" unselectable="on">Финский</div></a>
+                        <a class="dropdown-item" id="select_source_lang" href="#"><div class="listbox-option state-unselectable" data-value="fr" unselectable="on">Французский</div></a>
+                        <a class="dropdown-item" id="select_source_lang" href="#"><div class="listbox-option state-unselectable" data-value="hr" unselectable="on">Хорватский</div></a>
+                        <a class="dropdown-item" id="select_source_lang" href="#"><div class="listbox-option state-unselectable" data-value="cs" unselectable="on">Чешский</div></a>
+                        <a class="dropdown-item" id="select_source_lang" href="#"><div class="listbox-option state-unselectable" data-value="sv" unselectable="on">Шведский</div></a>
+                        <a class="dropdown-item" id="select_source_lang" href="#"><div class="listbox-option state-unselectable" data-value="et" unselectable="on">Эстонский</div></a></div>
+                </div>
+                    <style>
+                    .panel .btn-light{
+                        top: 25%;
+                        right: 3%;
+                        position: absolute;
+                        margin-top: -5px;
+                    }
+
+                    .panel .btn-light,.dropdown-toggle{
+                        color: black;
+                        font-family: Lobster;
+                        font-size: 7px;
+                        text-transform: uppercase;
+                        letter-spacing: 0.5px;
+                    }
+                    .panel .dropdown-item, .listbox-option{
+                        color: black;
+                        font-family: Lobster;
+                        background-color: #FFFFFF;
+                        font-size: 7px;
+                        text-transform: uppercase;
+                        letter-spacing: 1px;
+                        cursor: pointer;
+                        padding: 3px;
+                        line-height: 7px;
+                    }
+                    .listbox-column {
+                        display: inline-block;
+                        vertical-align: top;
+                    }
+                    </style>
+
+                </div>
+
+                <div id="textbox" class="textwrapper state-empty" >
+                    <style>
+                    .textwrapper {
+                        border: 3px solid #668EE3;
+                        position: relative;
+                        width: 570px; 
+                        height: 200px;
+                        resize: none; 
+                        margin-top: -50px;
+                    }
+                    </style>
+
+                    <div class="textbox">
+                    <div class="container">
+
+                    {% csrf_token %}
+                    <p><textarea id="inputter" class="form-control" placeholder="" name="text" style="font-family: 'Lobster'; font-size: 15px; color: black; width: 540px; height: 70px; margin-top: 20px; resize: none"></textarea></p>
+                    <p><input id="send_button" class="btn btn-light btn-lg btn-block" type="submit" style="padding: -10px; margin-top: 20px; font-family: 'Lobster'; font-size: 15px; line-height: 0.4; width: 540px"></p>
+                    
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+                <div class="item item_right">
+                    <div class="panel" style=" margin-left: 10px; margin-right: 10px;">
+                          <button class="btn btn-light btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" tabindex="-1" data-toggle="tooltip" data-placement="bottom" title="Язык перевода">
+                        <h8 id="trgt_lang" style="font-size: 12px">Язык перевода (Русский)</h8>
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" class="dropdown-menu show" aria-labelledby="dropdownMenuButton" x-placement="top-start" id="srcLangListboxContent" class="listbox-column listbox-column_main" style="position: absolute; transform: translate3d(70px, -131px, 0px); width: 10% top: 100px; left: 100px; will-change: transform;">
+                        <div class="listbox-column" unselectable="on">
+                        <a class="dropdown-item" id="select_target_lang" href="#"><div class="listbox-option state-unselectable" data-value="az" unselectable="on">Азербайджанский</div></a>
+                        <a class="dropdown-item" id="select_target_lang" href="#"><div class="listbox-option state-unselectable" data-value="sq" unselectable="on">Албанский</div></a>
+                        <a class="dropdown-item" id="select_target_lang" href="#"><div class="listbox-option state-unselectable" data-value="en" unselectable="on">Английский</div></a>
+                        <a class="dropdown-item" id="select_target_lang" href="#"><div class="listbox-option state-unselectable" data-value="af" unselectable="on">Африкаанс</div></a>
+                        <a class="dropdown-item" id="select_target_lang" href="#"><div class="listbox-option state-unselectable" data-value="ba" unselectable="on">Башкирский</div></a>
+                        <a class="dropdown-item" id="select_target_lang" href="#"><div class="listbox-option state-unselectable" data-value="be" unselectable="on">Белорусский</div></a>
+                        <a class="dropdown-item" id="select_target_lang" href="#"><div class="listbox-option state-unselectable" data-value="bg" unselectable="on">Болгарский</div></a>
+                        <a class="dropdown-item" id="select_target_lang" href="#"><div class="listbox-option state-unselectable" data-value="bs" unselectable="on">Боснийский</div></a>
+                        <a class="dropdown-item" id="select_target_lang" href="#"><div class="listbox-option state-unselectable" data-value="cy" unselectable="on">Валлийский</div></a></div>
+                        <div class="listbox-column" unselectable="on">
+                        <a class="dropdown-item" id="select_target_lang" href="#"><div class="listbox-option state-unselectable" data-value="hu" unselectable="on">Венгерский</div></a>
+                        <a class="dropdown-item" id="select_target_lang" href="#"><div class="listbox-option state-unselectable" data-value="el" unselectable="on">Греческий</div></a>
+                        <a class="dropdown-item" id="select_target_lang" href="#"><div class="listbox-option state-unselectable" data-value="da" unselectable="on">Датский</div></a>
+                        <a class="dropdown-item" id="select_target_lang" href="#"><div class="listbox-option state-unselectable" data-value="ga" unselectable="on">Ирландский</div></a>
+                        <a class="dropdown-item" id="select_target_lang" href="#"><div class="listbox-option state-unselectable" data-value="is" unselectable="on">Исландский</div></a>
+                        <a class="dropdown-item" id="select_target_lang" href="#"><div class="listbox-option state-unselectable" data-value="es" unselectable="on">Испанский</div></a>
+                        <a class="dropdown-item" id="select_target_lang" href="#"><div class="listbox-option state-unselectable" data-value="it" unselectable="on">Итальянский</div></a>
+                        <a class="dropdown-item" id="select_target_lang" href="#"><div class="listbox-option state-unselectable" data-value="lv" unselectable="on">Латышский</div></a>
+                        <a class="dropdown-item" id="select_target_lang" href="#"><div class="listbox-option state-unselectable" data-value="lt" unselectable="on">Литовский</div></a></div>
+                        <div class="listbox-column" unselectable="on">
+                        <a class="dropdown-item" id="select_target_lang" href="#"><div class="listbox-option state-unselectable" data-value="de" unselectable="on">Немецкий</div></a>
+                        <a class="dropdown-item" id="select_target_lang" href="#"><div class="listbox-option state-unselectable" data-value="nl" unselectable="on">Нидерландский</div></a>
+                        <a class="dropdown-item" id="select_target_lang" href="#"><div class="listbox-option state-unselectable" data-value="no" unselectable="on">Норвежский</div></a>
+                        <a class="dropdown-item" id="select_target_lang" href="#"><div class="listbox-option state-unselectable" data-value="pl" unselectable="on">Польский</div></a>
+                        <a class="dropdown-item" id="select_target_lang" href="#"><div class="listbox-option state-unselectable" data-value="pt" unselectable="on">Португальский</div></a>
+                        <a class="dropdown-item" id="select_target_lang" href="#"><div class="listbox-option state-unselectable" data-value="ro" unselectable="on">Румынский</div></a>
+                        <a class="dropdown-item" id="select_target_lang" href="#"><div class="listbox-option state-unselectable" data-value="ru" unselectable="on">Русский</div></a>
+                        <a class="dropdown-item" id="select_target_lang" href="#"><div class="listbox-option state-unselectable" data-value="sr" unselectable="on">Сербский</div></a>
+                        <a class="dropdown-item" id="select_target_lang" href="#"><div class="listbox-option state-unselectable" data-value="sk" unselectable="on">Словацкий</div></a></div>
+                        <div class="listbox-column" unselectable="on">
+                        <a class="dropdown-item" id="select_target_lang" href="#"><div class="listbox-option state-unselectable" data-value="sl" unselectable="on">Словенский</div></a>
+                        <a class="dropdown-item" id="select_target_lang" href="#"><div class="listbox-option state-unselectable" data-value="tr" unselectable="on">Турецкий</div></a>
+                        <a class="dropdown-item" id="select_target_lang" href="#"><div class="listbox-option state-unselectable" data-value="uk" unselectable="on">Украинский</div></a>
+                        <a class="dropdown-item" id="select_target_lang" href="#"><div class="listbox-option state-unselectable" data-value="fi" unselectable="on">Финский</div></a>
+                        <a class="dropdown-item" id="select_target_lang" href="#"><div class="listbox-option state-unselectable" data-value="fr" unselectable="on">Французский</div></a>
+                        <a class="dropdown-item" id="select_target_lang" href="#"><div class="listbox-option state-unselectable" data-value="hr" unselectable="on">Хорватский</div></a>
+                        <a class="dropdown-item" id="select_target_lang" href="#"><div class="listbox-option state-unselectable" data-value="cs" unselectable="on">Чешский</div></a>
+                        <a class="dropdown-item" id="select_target_lang" href="#"><div class="listbox-option state-unselectable" data-value="sv" unselectable="on">Шведский</div></a>
+                        <a class="dropdown-item" id="select_target_lang" href="#"><div class="listbox-option state-unselectable" data-value="et" unselectable="on">Эстонский</div></a></div>
+                </div>
+                    <style>
+                    .panel .btn-light{
+                        top: 25%;
+                        left: 2%;
+                        position: absolute;
+                        margin-top: -4px;
+                    }
+
+                    .panel .btn-light,.dropdown-toggle{
+                        color: black;
+                        font-family: Lobster;
+                        font-size: 11px;
+                        text-transform: uppercase;
+                        letter-spacing: 0.25px;
+                    }
+                    .panel .dropdown-item, .listbox-option{
+                        color: black;
+                        font-family: Lobster;
+                        background-color: #FFFFFF;
+                        font-size: 10.5px;
+                        text-transform: uppercase;
+                        letter-spacing: 0.25px;
+                        cursor: pointer;
+                        padding: -25px;
+                        line-height: 11px;
+                    }
+                    .listbox-column {
+                        display: inline-block;
+                        vertical-align: top;
+                    }
+                    </style>
+
+                </div>
+                    <div id="textbox2" class="textwrapper">
+                    <div class="container">
+                    <p><textarea id="outputter" class="form-control" placeholder="" name="text" style="font-family: 'Lobster'; font-size: 15px; color: black; width: 540px; height: 70px; margin-top: 20px; resize: none">{{ text }}</textarea></p>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <script language="JavaScript">
+
+                    function httpGetAsync(theUrl, callback) {
+                        var xmlHttp = new XMLHttpRequest();
+                        xmlHttp.onreadystatechange = function() {
+                            if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+                                callback(xmlHttp.responseText);
+                        };
+                        xmlHttp.open("GET", theUrl, true); // true for asynchronous
+
+                        xmlHttp.send(null);
+                    }
+
+                    var button=document.querySelector("#send_button");
+                    var source="en"; 
+                    var target="ru";
+                    var source_lang=document.querySelectorAll("#select_source_lang")
+                    var target_lang=document.querySelectorAll("#select_target_lang")
+
+                    source_lang.forEach.call(source_lang, function(el){
+                        el.addEventListener("click", function (){
+                            source=el.querySelector(".listbox-option").dataset.value.toString();
+                            document.querySelector("#src_lang").innerHTML=el.querySelector(".listbox-option").innerHTML;
+                        })     
+                    })
+
+                    target_lang.forEach.call(target_lang, function(el){
+                        el.addEventListener("click", function (){
+                            target=el.querySelector(".listbox-option").dataset.value.toString();
+                            document.querySelector("#trgt_lang").innerHTML=el.querySelector(".listbox-option").innerHTML;
+                        })     
+                    })
+
+                    button.addEventListener("click", function (){
+                        var source_text=document.querySelector("#inputter").value
+                        var url="/api/translate/?text="+source_text+"&source_lang="+source+"&target_lang="+target;
+                        httpGetAsync(url, function (res) {
+                            console.log(res);
+                            var obj = JSON.parse(res);
+                            console.log(obj['answer']);
+                            document.querySelector("#outputter").value=obj['answer'];
+                            console.log(typeof res);
+                        });
+                        console.log(source_text);
+                    
+                    });
+
+            </script>
+
+        <script src="{% static 'bootstrap/js/jquery.min.js' %}"></script>
+        <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+
+        <script src="{% static 'js/main.js' %}"></script>
+        <script src="{% static 'js/tr_text.js' %}"></script>
+        <script src="{% static 'js/extra.js' %}"></script>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+        <script src="static/js/jquery-3.2.1.slim.min.js"></script>
+        <script src="static/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+{% endblock %}  

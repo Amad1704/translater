@@ -5,11 +5,15 @@ from .forms import TextFieldForm
 from django.http import JsonResponse
 from .models import Post
 from django.utils import timezone
+import random
+from yandex import Translater
+import urllib
+from urllib.parse import urlparse
 
 
 KEY = "trnsl.1.1.20180323T190702Z.6f17dac41b4158a7.b49e8ad2094d112c0005087f1553da919ceec82b"
 
-lang_list = "en,de,sv,az,sq,ba,be,bg,bs,cy,hu,nl,el,da,ga,is,es,lv,lt,et,cs,hr,fr,fi,uk,tr,sl,sr,sk,ru,ro,pt,pl,no,it"
+lang_list = "en,de,sv,az,sq,af,ba,be,bg,bs,cy,hu,nl,el,da,ga,is,es,lv,lt,et,cs,hr,fr,fi,uk,tr,sl,sr,sk,ro,pt,pl,no,it,ru,en"
 
 
 def detect_lang(text):
@@ -66,14 +70,42 @@ def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
     return render(request, 'converter/post_detail.html', {'post': post})
 
+
+languages = lang_list.split(',')
+
+for x in range(1, len(languages)):
+    source_lang = languages[x]
+    target_lang = languages[x-1]
+#    print(languages[x-1:x+1])
+
+
 def bad_translator(request):
     if request.method == "POST":
         text = request.POST["text"]
-
-        # Здесь функция плохого переводчика из draft.py
-        return render(request, 'converter/bad_translation.html', {'form':form})
+        for x, lang in enumerate(languages):
+        #    print(x, '-->', lang)
+            source_lang = languages[x]
+            target_lang = random.choice(languages)
+        #    print(target_lang)
+            try:
+                new_result = translate(source_lang, target_lang, result_text.get("text")[0])
+        #        print(new_result)
+                print(new_result.get("text")[0])
+            except UnicodeEncodeError:
+                print("Sorry! Translation to this language cannot be performed")
+                continue
+        return render(request, "converter/bad_translator.html", {'form':form})
     else:
         form = TextFieldForm()
-        return JsonResponse({"status": "okey"})
+        return render(request, "converter/bad_translator.html", {})
+
+
+def bad(request):
+    source_text = request.GET.get('text')
+    source_lang = request.GET.get('source_lang', 'en')
+    target_lang = request.GET.get('target_lang', 'ru')
+    result_text = translate(source_lang, target_lang, source_text)
+    print(result_text.get("text")[0])
+    return JsonResponse({"status": "okey", "answer": result_text.get('text')[0], "target_lang": target_lang})
 
 

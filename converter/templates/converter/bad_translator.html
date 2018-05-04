@@ -24,17 +24,8 @@
     <div class="main">
             <div class="container container_main">
                 <div class="item item_left">
-                    <div class="panel" style=" margin-left: 10px; margin-right: 10px;">
+                    <div class="panel" style=" margin-left: 20px; margin-right: 10px;">
                         <h8 id="src_lang" style="font-family: 'Lobster'; font-size: 15px;"> Исходный текст (английский)</h8>
-
-                    <style>
-                    .panel .btn-light{
-                        top: 25%;
-                        left: 3%;
-                        position: absolute;
-                        margin-top: -5px;
-                    }
-                    </style>
 
                 </div>
 
@@ -55,7 +46,7 @@
 
                     {% csrf_token %}
                     <p><textarea id="inputter" class="form-control" placeholder="" name="text" style="font-family: 'Lobster'; font-size: 15px; color: black; width: 540px; height: 70px; margin-top: 20px; resize: none"></textarea></p>
-                    <p><input id="send_button" class="btn btn-light btn-lg btn-block" type="submit" style="padding: -10px; margin-top: 20px; font-family: 'Lobster'; font-size: 15px; line-height: 0.4; width: 540px"></p>
+                    <p><input id="send_button" class="btn btn-link btn-lg btn-block" type="submit" style="padding: -10px; margin-top: 20px; font-family: 'Lobster'; font-size: 15px; line-height: 0.4; width: 540px"></p>
                     
                     </div>
                     </div>
@@ -63,18 +54,8 @@
             </div>
 
                 <div class="item item_right">
-                    <div class="panel" style=" margin-left: 10px; margin-right: 10px;">
+                    <div class="panel" style=" margin-left: 20px; margin-right: 10px;">
                         <h8 id="trgt_lang" style="font-family: 'Lobster'; font-size: 15px;"> Перевод (русский)</h8>
-
-
-                    <style>
-                    .panel .btn-light{
-                        top: 25%;
-                        left: 2%;
-                        position: absolute;
-                        margin-top: -4px;
-                    }
-                    </style>
 
                 </div>
                     <div id="textbox2" class="textwrapper">

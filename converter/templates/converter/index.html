@@ -19,13 +19,14 @@
     </head>
     
     <body> 
-        <div id="header" class="header"><h2><a> Good Tr@nsl@tor </a></h2></div>
-        
+        <div id="header" class="header"><h2><a> Good Tr@nsl@tor</a></h2></div>
+
     <div class="main">
+
             <div class="container container_main">
                 <div class="item item_left">
                     <div class="panel" style=" margin-left: 10px; margin-right: 10px;">
-                    <button class="btn btn-light btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" tabindex="-1" data-toggle="tooltip" data-placement="bottom" title="Язык исходного текста">
+                    <button class="btn btn-link btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" tabindex="-1" data-toggle="tooltip" data-placement="bottom" title="Язык исходного текста">
                         <h8 id="src_lang" style="font-size: 12px;">Язык исходного текста (Английский)</h8>
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" class="dropdown-menu show" aria-labelledby="dropdownMenuButton" x-placement="top-start" id="srcLangListboxContent" class="listbox-column listbox-column_main" style="transform: translate3d(70px, -131px, 0px); width: 10% top: 100px; left: 50px; will-change: transform;">
@@ -71,9 +72,9 @@
                         <a class="dropdown-item" id="select_source_lang" href="#"><div class="listbox-option state-unselectable" data-value="et" unselectable="on">Эстонский</div></a></div>
                 </div>
                     <style>
-                    .panel .btn-light{
+                    .panel .btn-link{
                         top: 25%;
-                        right: 3%;
+                        left: 3%;
                         position: absolute;
                         margin-top: -5px;
                     }
@@ -121,7 +122,7 @@
 
                     {% csrf_token %}
                     <p><textarea id="inputter" class="form-control" placeholder="" name="text" style="font-family: 'Lobster'; font-size: 15px; color: black; width: 540px; height: 70px; margin-top: 20px; resize: none"></textarea></p>
-                    <p><input id="send_button" class="btn btn-light btn-lg btn-block" type="submit" style="padding: -10px; margin-top: 20px; font-family: 'Lobster'; font-size: 15px; line-height: 0.4; width: 540px"></p>
+                    <p><input id="send_button" class="btn btn-link" type="submit" style="padding: -10px; margin-top: 20px; font-family: 'Lobster'; font-size: 15px; line-height: 0.4; width: 540px"></p>
                     
                     </div>
                     </div>
@@ -130,7 +131,7 @@
 
                 <div class="item item_right">
                     <div class="panel" style=" margin-left: 10px; margin-right: 10px;">
-                          <button class="btn btn-light btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" tabindex="-1" data-toggle="tooltip" data-placement="bottom" title="Язык перевода">
+                          <button class="btn btn-link btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" tabindex="-1" data-toggle="tooltip" data-placement="bottom" title="Язык перевода">
                         <h8 id="trgt_lang" style="font-size: 12px">Язык перевода (Русский)</h8>
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" class="dropdown-menu show" aria-labelledby="dropdownMenuButton" x-placement="top-start" id="srcLangListboxContent" class="listbox-column listbox-column_main" style="position: absolute; transform: translate3d(70px, -131px, 0px); width: 10% top: 100px; left: 100px; will-change: transform;">
@@ -176,7 +177,7 @@
                         <a class="dropdown-item" id="select_target_lang" href="#"><div class="listbox-option state-unselectable" data-value="et" unselectable="on">Эстонский</div></a></div>
                 </div>
                     <style>
-                    .panel .btn-light{
+                    .panel .btn-link{
                         top: 25%;
                         left: 2%;
                         position: absolute;

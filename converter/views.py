@@ -78,10 +78,14 @@ for x in range(1, len(languages)):
     target_lang = languages[x-1]
 #    print(languages[x-1:x+1])
 
-
 def bad_translator(request):
     if request.method == "POST":
         text = request.POST["text"]
+        result_lang = detect_lang(text)
+        # print(result_lang)
+        result_text = translate(source_lang, target_lang, text)
+        print(result_text.get("text")[0])
+        # print(result_text)
         for x, lang in enumerate(languages):
         #    print(x, '-->', lang)
             source_lang = languages[x]

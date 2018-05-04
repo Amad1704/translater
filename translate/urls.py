@@ -5,8 +5,8 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'', include('converter.urls')),
-    url(r'^post/good/translator/$', index),
-    url(r'^post/bad/translator/$', bad_translator),
+    url(r'^good/translator/$', index),
+    url(r'^bad/translator/$', bad_translator),
     url(r'api/translate/$', api),
     url(r'bad/translate/$', bad),
 ]

@@ -1,12 +1,11 @@
 {% extends 'converter/base.html' %}
 
 {% block content %}
-{% for post in posts %}
-<div class="post">
-</div>
-<h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
-<h1><a href="{% url 'index' %}">{{ TextField.title }}</a></h1>
-<h1><a href="{% url 'bad_translator' %}">{{ TextField.text }}</a></h1>
-</div>
-{% endfor %}
+    {% for post in posts %}
+        <div class="post"></div>
+            <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+        <div class="textfield"></div>
+            <h1><a href="/good/translator/">Good Translator</a></h1>
+            <h1><a href="/bad/translator/">Bad Translator</a></h1>
+    {% endfor %}
 {% endblock %}

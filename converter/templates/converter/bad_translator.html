@@ -19,13 +19,13 @@
     </head>
     
     <body> 
-        <div id="header" class="header"><h2><a> B@d Tr@nsl@tor </a></h2></div>
+        <div id="header" class="header"><h2><a> Bad Translator </a></h2></div>
         
     <div class="main">
             <div class="container container_main">
                 <div class="item item_left">
                     <div class="panel" style=" margin-left: 20px; margin-right: 10px;">
-                        <h8 id="src_lang" style="font-family: 'Lobster'; font-size: 15px;"> Исходный текст (английский)</h8>
+                        <h8 id="src_lang" style="font-family: 'Lobster'; font-size: 15px;"> Исходный текст (английский) </h8>
 
                 </div>
 
@@ -55,7 +55,7 @@
 
                 <div class="item item_right">
                     <div class="panel" style=" margin-left: 20px; margin-right: 10px;">
-                        <h8 id="trgt_lang" style="font-family: 'Lobster'; font-size: 15px;"> Перевод (русский)</h8>
+                        <h8 id="trgt_lang" style="font-family: 'Lobster'; font-size: 15px;"> Перевод (русский) </h8>
 
                 </div>
                     <div id="textbox2" class="textwrapper">
@@ -66,17 +66,50 @@
                 </div>
             </div>
 
+
+ <script language="JavaScript">
+
+                    function httpGetAsync(theUrl, callback) {
+                        var xmlHttp = new XMLHttpRequest();
+                        xmlHttp.onreadystatechange = function() {
+                            if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+                                callback(xmlHttp.responseText);
+                        };
+                        xmlHttp.open("GET", theUrl, true); // true for asynchronous
+
+                        xmlHttp.send(null);
+                    }
+
+                    var button=document.querySelector("#send_button");
+
+                    button.addEventListener("click", function (){
+                        var source_text=document.querySelector("#inputter").value
+                        var url="/bad/translate/?text="+source_text;
+                        httpGetAsync(url, function (res) {
+                            console.log(res);
+                            var obj = JSON.parse(res);
+                            console.log(obj['answer']);
+                            document.querySelector("#outputter").value=obj['answer'];
+                            console.log(typeof res);
+                        });
+                        console.log(source_text);
+                    
+                    });
+
+            </script>
+
         <script src="{% static 'bootstrap/js/jquery.min.js' %}"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+        <script src="https://static/js/jquery-3.2.1.slim.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        
         <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+        <script src="https://static/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
         <script src="{% static 'js/main.js' %}"></script>
         <script src="{% static 'js/tr_text.js' %}"></script>
         <script src="{% static 'js/extra.js' %}"></script>
-
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-        <script src="static/js/jquery-3.2.1.slim.min.js"></script>
-        <script src="static/js/bootstrap.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    </body>
 {% endblock %}  

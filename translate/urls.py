@@ -1,5 +1,6 @@
 from django.conf.urls import include, url
-from converter.views import index, api, bad_translator, bad
+from converter.views import index, api
+from converter.views_bad import bad_translator, bad
 from django.contrib import admin
 
 urlpatterns = [
